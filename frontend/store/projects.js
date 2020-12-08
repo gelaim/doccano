@@ -68,6 +68,11 @@ export const getters = {
       text: 'JSONL',
       accept: '.json,.jsonl'
     }
+    const jsonl = {
+      type: 'json1',
+      text: 'JSONL(Text label)',
+      accept: '.json,.jsonl'
+    }
     const conll = {
       type: 'conll',
       text: 'CoNLL',
@@ -108,6 +113,11 @@ export const getters = {
         '{"text": "Peter Blackburn", "labels": [ [0, 15, "PERSON"] ]}\n',
         '{"text": "President Obama", "labels": [ [10, 15, "PERSON"] ]}'
       ]
+      jsonl.examples = [
+        '{"id": 1, "text": "EU rejects ...", "labels": [[0,2,"ORG"], [11,17, "MISC"], [34,41,"ORG"]]}\n',
+        '{"id": 2, "text": "Peter Blackburn", "labels": [[0, 15, "PERSON"]]}\n',
+        '{"id": 3, "text": "President Obama", "labels": [[10, 15, "PERSON"]]}\n'
+      ]
       conll.examples = [
         'EU\tB-ORG\n',
         'rejects\tO\n',
@@ -123,6 +133,7 @@ export const getters = {
       ]
       return [
         plain,
+        jsonl,
         json,
         conll
       ]
